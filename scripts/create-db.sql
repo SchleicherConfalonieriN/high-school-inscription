@@ -1,3 +1,20 @@
+
+CREATE TABLE `grades` (
+  `id` int UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  'cursada' int UNSIGNED NOT NULL,
+  'final' int UNSIGNED,
+  `id_student` int UNSIGNED NOT NULL,
+  `id_subject` int UNSIGNED NOT NULL,
+  CONSTRAINT fk_student_subject
+  FOREIGN KEY (id_student) 
+  REFERENCES students(id_student),
+  CONSTRAINT fk_subject_subject
+  FOREIGN KEY (id_subject) 
+  REFERENCES subjects(id_subject)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
 CREATE TABLE `administrators` (
   `id_administrator` int UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
   `name` char(50) NOT NULL,
